@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -25,17 +25,16 @@ jobs:
         run: npm install
 
       - name: Build the Project
-        run: npm run build --prod # 確保是 production build
+        run: npm run build --prod
 
-      - name: List files in dist directory
-        run: ls -la dist/ # 檢查構建輸出是否正確
+      - name: List build output
+        run: ls -la dist/ # 檢查 `dist/` 目錄是否有生成
 
-      # 上傳構建產物
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: artifact
-          path: dist/your-angular-project-name # 修改為正確的 Angular 構建目錄
+          name: angular-build # 確保名稱正確
+          path: dist/your-angular-project-name # 修改為你的 Angular 專案名稱
 
   deploy:
     needs: build
@@ -47,28 +46,27 @@ jobs:
       id-token: write
       contents: write
       pages: write
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 下載構建產物
-      - name: Download artifact
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: artifact
-          path: dist # 確保正確下載構建產物
+          name: angular-build # 確保名稱匹配 `build` 階段的上傳名稱
+          path: dist
 
-      - name: List files before deployment
+      - name: List downloaded files
         run: ls -la dist/ # 確保 `index.html` 存在
 
-      # 上傳正確的目錄
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/your-angular-project-name # 確保這裡指向正確的構建目錄
+          path: dist/your-angular-project-name # 確保這裡指向正確的 Angular 構建目錄
 
       - name: Deploy to GitHub Pages
         id: deployment
