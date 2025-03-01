@@ -3,32 +3,32 @@ name: Build Angular Project
 on:
   push:
     branches:
-      - master   # 監聽 master 分支的 push 事件
+      - master # 監聽 master 分支的 push 事件
   pull_request:
     branches:
-      - master   # 也可以在 pull request 事件中觸發
+      - master # 也可以在 pull request 事件中觸發
 
 jobs:
   build:
-    runs-on: ubuntu-latest   # 使用最新的 Ubuntu 環境來運行工作
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 環境來運行工作
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3   # 檢出代碼庫
+        uses: actions/checkout@v3 # 檢出代碼庫
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # 設定 Node.js
+        uses: actions/setup-node@v3 # 設定 Node.js
         with:
-          node-version: '18'  # 設定 Node.js 版本，根據需要調整
+          node-version: "18" # 設定 Node.js 版本，根據需要調整
 
       - name: Install Dependencies
-        run: npm install   # 安裝依賴
+        run: npm install # 安裝依賴
 
       - name: Build the Project
-        run: npm run build   # 運行構建命令
+        run: npm run build # 運行構建命令
 
       - name: Upload build artifacts (optional)
-        uses: actions/upload-artifact@v3  # 將構建結果上傳到 GitHub
+        uses: actions/upload-artifact@v2 # 將構建結果上傳到 GitHub
         with:
           name: build-artifacts
-          path: ./dist   # 將 dist 目錄中的構建文件作為產物上傳
+          path: ./dist # 將 dist 目錄中的構建文件作為產物上傳
