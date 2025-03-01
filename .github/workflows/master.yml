@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4 # 使用 v4 版本
         with:
           name: artifact
-          path: .
+          path: ./src
   # Single deploy job since we're just deploying
   deploy:
     environment:
@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: "."
+          path: "./src"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
