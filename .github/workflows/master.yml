@@ -9,32 +9,21 @@ on:
       - master # 也可以在 pull request 事件中觸發
 
 jobs:
-  build:
-    runs-on: ubuntu-latest # 使用最新的 Ubuntu 環境來運行工作
-
+  upload:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3 # 檢出代碼庫
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4 # 設定 Node.js
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          node-version: "23.x" # 使用你的 Node.js 版本
-
-      - name: Install Dependencies
-        run: npm install # 安裝依賴
-
-      - name: Build the Project
-        run: npm run build # 運行構建命令
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload build artifacts (optional)
-        uses: actions/upload-pages-artifact@v1 # 使用新的 upload-pages-artifact@v1 版本
+          name: my-artifact # NOTE: same artifact name
+          path: my-file.txt
+  upload-again:
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts
-          path: ./dist # 將 dist 目錄中的構建文件作為產物上傳
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          name: my-artifact # NOTE: same artifact name
+          path: my-file.txt
+          overwrite: true
