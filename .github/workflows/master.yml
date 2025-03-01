@@ -28,7 +28,7 @@ jobs:
         run: npm run build # 運行構建命令
 
       - name: Upload build artifacts (optional)
-        uses: actions/upload-artifact@v2 # 將構建結果上傳到 GitHub
+        uses: actions/upload-artifact@v3 # 將構建結果上傳到 GitHub (使用 v3 版本)
         with:
           name: build-artifacts
           path: ./dist # 將 dist 目錄中的構建文件作為產物上傳
