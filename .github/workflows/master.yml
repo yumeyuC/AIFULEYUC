@@ -39,6 +39,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write # 設定 GITHUB_TOKEN 擁有 id-token: write 權限
+      contents: write # 可以根據需要設定其他權限，例如 contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
