@@ -3,10 +3,10 @@ name: Build and Deploy Angular Project
 on:
   push:
     branches:
-      - master # 監聽 master 分支的 push 事件
+      - master
   pull_request:
     branches:
-      - master # 也可以在 pull request 事件中觸發
+      - master
 
 jobs:
   build:
@@ -19,40 +19,57 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "23.x" # 如果需要更新 Node.js 版本
+          node-version: "23.x"
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build the Project
-        run: npm run build
+        run: npm run build --prod # 確保是 production build
 
-      # 使用 v4 版本的 upload-artifact 來上傳構建產物
+      - name: List files in dist directory
+        run: ls -la dist/ # 檢查構建輸出是否正確
+
+      # 上傳構建產物
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4 # 使用 v4 版本
+        uses: actions/upload-artifact@v4
         with:
           name: artifact
-          path: .
-  # Single deploy job since we're just deploying
+          path: dist/your-angular-project-name # 修改為正確的 Angular 構建目錄
+
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     permissions:
-      id-token: write # 確保 GITHUB_TOKEN 有 id-token 權限
-      contents: write # 必要時設置為 write，用於推送代碼
-      pages: write # 需要此權限來進行 GitHub Pages 部署
+      id-token: write
+      contents: write
+      pages: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifact
+
+      # 下載構建產物
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: artifact
+          path: dist # 確保正確下載構建產物
+
+      - name: List files before deployment
+        run: ls -la dist/ # 確保 `index.html` 存在
+
+      # 上傳正確的目錄
+      - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: "."
+          path: dist/your-angular-project-name # 確保這裡指向正確的構建目錄
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
