@@ -4,8 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-main',
   imports: [],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  styleUrls: [
+    './main.component.css',
+    './main_ex.component.css'  // 這樣就會載入兩個 CSS 檔案
+  ]
 })
 export class MainComponent {
-
+  title = 'WillyChen';
 }
