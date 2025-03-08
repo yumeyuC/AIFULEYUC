@@ -10,7 +10,7 @@ import { YumeyuLoginComponent } from './direct-page/yumeyu-login/yumeyu-login.co
 const routes: Routes = [  
   { path: '', component: YumeyuLoginComponent },         // 根頁面，顯示 MainComponent
   { path: 'login', component: MainComponent },           // /login 路徑，顯示 LoginComponent
-  { path: 'yulogin', component: YumeyuLoginComponent },  // /yulogin 路徑，顯示 YumeyuLoginComponent
+  { path: 'yu', component: YumeyuLoginComponent },  // /yulogin 路徑，顯示 YumeyuLoginComponent
   {
     path: 'protected',
     component: MainComponent,
