@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,21 +7,20 @@ import { HTTP_INTERCEPTORS, ɵHttpInterceptorHandler } from '@angular/common/htt
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedPrimengModule } from './shared-primeng.module';
 
-import { MainComponent } from './direct-page/main/main.component';
-import { YumeyuLoginComponent } from './direct-page/yumeyu-login/yumeyu-login.component';
+// import { MainComponent } from './direct-page/main/main.component';
+// import { YumeyuLoginComponent } from './direct-page/yumeyu-login/yumeyu-login.component';
 
 @NgModule({
-  declarations: [
+  declarations: [    
+    // MainComponent,
+    // YumeyuLoginComponent
   ],
   imports: [
+    AppComponent,
     CommonModule,
-    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedPrimengModule,
-    AppComponent,
-    MainComponent,
-    YumeyuLoginComponent
   ],
   providers:[
     {
