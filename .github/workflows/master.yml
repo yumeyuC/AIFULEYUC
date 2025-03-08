@@ -24,6 +24,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Install quill
+        run: npm install quill
+
       - name: Build the Project
         run: npm run build --prod
 
