@@ -9,6 +9,6 @@ export default `<!doctype html>
 <link rel="stylesheet" href="styles-5INURTSO.css"></head>
 <body ngcm="">
   <app-root></app-root>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-BGGMKH5M.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-DAQOROHW.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-WZ3PA6QH.js" type="module"></script></body>
 </html>
 `;
