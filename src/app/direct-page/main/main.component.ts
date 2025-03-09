@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +10,7 @@ import { AfterViewInit, Component, QueryList, ViewChildren } from '@angular/core
     './main_ex.component.css'  // 這樣就會載入兩個 CSS 檔案
   ]
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   title = 'WillyChen';
 
   // FAQ項目數據
