@@ -17,33 +17,40 @@ export class MainComponent implements OnInit {
   faqItems = [
     {
       question: '自我介紹：',
-      answer: '大學就讀文化大學大氣科學系。' +
-              '退伍曾嘗試考公職、颱風展解說、手機客服、國小安親導師，因薪水考量到資策會學習C#、.net、MSSQL、HTML等基礎知識。<br/>'+
-              '第一份工作就任榮利科技(5年)，<br/>'+
-              ''
+      answer: '大學就讀文化大學大氣科學系。<br/>' +
+              '退伍曾嘗試考公職、颱風展解說、手機客服、國小安親導師，因薪水考量到資策會學習C#、.net、MSSQL、HTML等基礎知識。<br/>'
       ,
       open: false
     },
     {
-      question: '退款方式及退款時間？',
-      answer: '約7-8個工作天完成退款作業。',
+      question: '第一份工作就任榮利科技(5年)',
+      answer: '<ol class="numbered-list">'+
+              '<li>開發富邦國外匯款系統(Java、Git操作)，</li>'+
+              '<li>維護集保證券系統(COBOL)，</li>'+
+              '<li>開發新證券平台(Typescript、Devops、SA工作)，</li>'+
+              '</ol>'+
+              '因加班頻繁決定離職，到現任的「博訊科技」。',
       open: false
     },
     {
-      question: '未退回的退款，是否可直接折抵新訂單？',
-      answer: '很抱歉，重新訂購時無法直接於新訂單扣抵。',
+      question: '第二份工作就任博訊科技(約2年)',
+      answer: '<ol class="numbered-list">'+
+              '<li>維護採購系統。</li>'+
+              '<li>維護網站(串接webService、串接ELK資料、維護Batch程式)</li>'+
+              '<li>開發、維護工時系統。</li>'+
+              '<li>開發、維護出勤(加班)系統。(擔任PG、SA、PM)</li>'+
+              '</ol>'+
+              '因即將搬至通勤時間來回增加兩小時的地點，<br/>通勤時間考量，決定尋找新公司。',
       open: false
     },
     {
-      question: '發票遺失是否仍能辦理退換貨？',
-      answer: '很抱歉，需要有發票才能辦理退換貨。',
+      question: 'window form小工具',
+      answer: '<a target="_blank" href="https://github.com/atmos9521/CutTelString">讀取EXCEL檔案切電文工具</a><br/>' +
+              '<a target="_blank" href="https://github.com/atmos9521/PicBackup">爬蟲下載圖片</a><br/>'+
+              '<a target="_blank" href="https://github.com/atmos9521/GoogleService">取得google Excel資料</a><br/>'
+              ,
       open: false
     },
-    {
-      question: '什麼情況無法辦理退換貨？',
-      answer: '超過7天退貨期限，就無法辦理。',
-      open: false
-    }
   ];
 
   // 用來切換答案的顯示與隱藏
