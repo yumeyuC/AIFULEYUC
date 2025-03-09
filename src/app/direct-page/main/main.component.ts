@@ -46,4 +46,8 @@ export class MainComponent {
   toggleAnswer(item: any): void {
     item.open = !item.open;
   }
+
+  ngOnInit() {
+    console.log(this.faqItems);
+  }
 }
