@@ -19,8 +19,11 @@ export class AppComponent {
   // FAQ項目數據
   faqItems = [
     {
-      question: '如何辦理退換貨？',
-      answer: '請參考退貨服務頁面。',
+      question: '自我介紹：',
+      answer: '  就讀文化大學大氣科學系<br/>' +
+              '退伍後嘗試考公職、颱風展解說、手機客服、安親導師。' +
+              ''
+      ,
       open: false
     },
     {
