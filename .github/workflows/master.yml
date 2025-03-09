@@ -28,7 +28,7 @@ jobs:
         run: npm install quill
 
       - name: Build the Project
-        run: npm run build --prod
+        run: npm run build
 
       - name: List build output
         run: ls -la dist/ # 檢查 `dist/` 目錄是否有生成
