@@ -16,8 +16,12 @@ export class MainComponent implements OnInit {
   // FAQ項目數據
   faqItems = [
     {
-      question: '如何辦理退換貨？',
-      answer: '請參考退貨服務頁面。',
+      question: '自我介紹：',
+      answer: '大學就讀文化大學大氣科學系。' +
+              '退伍曾嘗試考公職、颱風展解說、手機客服、國小安親導師，因薪水考量到資策會學習C#、.net、MSSQL、HTML等基礎知識。<br/>'+
+              '第一份工作就任榮利科技(5年)，<br/>'+
+              ''
+      ,
       open: false
     },
     {
