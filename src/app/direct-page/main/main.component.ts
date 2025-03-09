@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   // FAQ項目數據
   faqItems = [
     {
-      question: '自我介紹：',
+      question: '就職前經歷',
       answer: '大學就讀文化大學大氣科學系。<br/>' +
               '退伍曾嘗試考公職、颱風展解說、手機客服、國小安親導師，因薪水考量到資策會學習C#、.net、MSSQL、HTML等基礎知識。<br/>'
       ,
@@ -48,6 +48,23 @@ export class MainComponent implements OnInit {
       answer: '<a target="_blank" href="https://github.com/atmos9521/CutTelString">讀取EXCEL檔案切電文工具</a><br/>' +
               '<a target="_blank" href="https://github.com/atmos9521/PicBackup">爬蟲下載圖片</a><br/>'+
               '<a target="_blank" href="https://github.com/atmos9521/GoogleService">取得google Excel資料</a><br/>'
+              ,
+      open: false
+    },
+    {
+      question: '近期目標',
+      answer: '程式：在gitHub架設靜態網站。<br/>' +
+              '休閒：'+
+              '<ul>'+
+              '<li>4月底日本自由行。</li>'+
+              '<li>甜點製作。</li>'+
+              '<ul/>'
+              ,
+      open: false
+    },
+    {
+      question: '近期目標',
+      answer: '設置伺服器，網站改為動態網站。<br/>'
               ,
       open: false
     },
