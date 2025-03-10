@@ -52,19 +52,26 @@ export class MainComponent implements OnInit {
       open: false
     },
     {
-      question: '近期目標',
-      answer: '程式：在gitHub架設靜態網站。<br/>' +
-              '休閒：'+
-              '<ul>'+
+      question: '近期計畫',
+      answer: '<ul>'+
+              '<li>在gitHub架設靜態網站。</li>'+
               '<li>4月底日本自由行。</li>'+
-              '<li>甜點製作。</li>'+
               '<ul/>'
               ,
       open: false
     },
     {
-      question: '近期目標',
-      answer: '設置伺服器，網站改為動態網站。<br/>'
+      question: '長期學習目標',
+      answer: '設置伺服器，網站改為動態網站。'
+              ,
+      open: false
+    },
+    {
+      question: '休閒興趣',
+      answer: '<ul>'+
+              '<li>程式編輯。</li>'+
+              '<li>甜點製作。</li>'+
+              '<ul/>'
               ,
       open: false
     },
