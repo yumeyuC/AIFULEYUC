@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:IFULEYUC": "node dist/ifuleyuc/server/server.mjs",
     "buildgit": "ng build --configuration production --output-path docs"
   },
   "private": true,
@@ -27,8 +26,9 @@
     "primeng": "^19.0.9",
     "primeui": "^4.1.15",
     "quill": "^2.0.3",
+    "quill-delta": "^5.1.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.8.1",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
