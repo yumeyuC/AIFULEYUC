@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SecPageComponent implements OnInit {
   private activeRouter = inject(ActivatedRoute);
   ngOnInit(): void {
-    this.getDetailID();
+    console.log("SecPageComponent ngOnInit");
   }
 
   getDetailID(): void {
