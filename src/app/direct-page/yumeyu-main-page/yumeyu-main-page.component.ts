@@ -9,5 +9,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './yumeyu-main-page.component.css'
 })
 export class YumeyuMainPageComponent {
-
+  ngOnInit(): void {
+    console.log("YumeyuRoutingModule ngOnInit");
+  }
 }
