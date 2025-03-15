@@ -1,9 +1,20 @@
 import { Routes } from '@angular/router';
-import { MainComponent } from './direct-page/main/main.component';
-import { YumeyuLoginComponent } from './direct-page/yumeyu-login/yumeyu-login.component';
+import { MainPageComponent } from './direct-page/main-page/main-page.component';
 
 export const routes: Routes = [
-  { path: '', component: YumeyuLoginComponent }, // 設定根路徑的首頁
-  { path: 'login', component: MainComponent }, // 設定 /login 路由，顯示 MainComponent
-  { path: 'yu', component: YumeyuLoginComponent }, // 設定 /yulogin 路由，顯示 YumeyuLoginComponent
+    { 
+        path: '',
+        // component: YumeyuMainPageComponent,
+        loadComponent: () => import('./direct-page/yumeyu-main-page/yumeyu-main-page.component').then(m=>m.YumeyuMainPageComponent),
+        loadChildren: () => import('./direct-page/yumeyu-main-page/yumeyu-routing.module').then(m=>m.YumeyuRoutingModule),
+    },
+    { 
+        path: 'yu',
+        // component: YumeyuMainPageComponent,
+        loadComponent: () => import('./direct-page/yumeyu-main-page/yumeyu-main-page.component').then(m=>m.YumeyuMainPageComponent),
+        loadChildren: () => import('./direct-page/yumeyu-main-page/yumeyu-routing.module').then(m=>m.YumeyuRoutingModule),
+    },
+    { path: 'login', component: MainPageComponent },  // 設定 /login 路由，顯示 MainPageComponent
+    { path: '**', redirectTo: '/yu' },
+    
 ];

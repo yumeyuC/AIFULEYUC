@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IFULEYUC": {
+    "AIFULEYUC": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "docs",
-            "baseHref": "/",
+            "baseHref": "/AIFULEYUC/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,27 +25,20 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/favicon.ico",
-              "src/assets"
+              }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3MB",
-                  "maximumError": "3MB"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -67,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "IFULEYUC:build:production"
+              "buildTarget": "AIFULEYUC:build:production"
             },
             "development": {
-              "buildTarget": "IFULEYUC:build:development"
+              "buildTarget": "AIFULEYUC:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "aa4495dc-246f-4aa6-9981-1cb6569c4f1e"
+    "analytics": false
   }
 }

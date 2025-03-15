@@ -1,9 +1,0 @@
-<section class="faq">
-    <h1 class="title">自我介紹</h1>
-    <ul>
-        <li *ngFor="let item of faqItems" (click)="toggleAnswer(item)">
-            <div>{{ item.question }}</div>
-            <div [innerHTML]="item.answer"></div>
-        </li>
-    </ul>
-</section>

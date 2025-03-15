@@ -1,34 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HTTP_INTERCEPTORS, ɵHttpInterceptorHandler } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedPrimengModule } from './shared-primeng.module';
-
-// import { MainComponent } from './direct-page/main/main.component';
-// import { YumeyuLoginComponent } from './direct-page/yumeyu-login/yumeyu-login.component';
+import { YumeyuMainPageComponent } from './direct-page/yumeyu-main-page/yumeyu-main-page.component';
+import { MainPageComponent } from './direct-page/main-page/main-page.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { YumeyuModule } from './direct-page/yumeyu-main-page/yumeyu.module';
+import { YumeyuRoutingModule } from './direct-page/yumeyu-main-page/yumeyu-routing.module';
 
 @NgModule({
-  declarations: [    
-    // MainComponent,
-    // YumeyuLoginComponent
+  declarations: [
+    AppComponent,
+    YumeyuMainPageComponent,
+    MainPageComponent,
   ],
   imports: [
-    AppComponent,
     CommonModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    SharedPrimengModule,
+    BrowserModule,
+    YumeyuModule,
+    YumeyuRoutingModule,
   ],
-  providers:[
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ɵHttpInterceptorHandler,
-      multi:true,
-    }
-  ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
