@@ -5,16 +5,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Run TypeScript script
+        uses: Flydiverny/github-typescript@v7
         with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install -g typescript
-
-      - name: Compile TypeScript
-        run: tsc scripts/example.ts --outDir dist
-
-      - name: Run JavaScript file
-        run: node dist/example.js
+          script-file: scripts/example.ts
+          github-token: ${{ secrets.GITHUB_TOKEN }}
