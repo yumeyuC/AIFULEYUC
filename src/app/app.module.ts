@@ -6,6 +6,7 @@ import { MainPageComponent } from './direct-page/main-page/main-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { YumeyuModule } from './direct-page/yumeyu-main-page/yumeyu.module';
 import { YumeyuRoutingModule } from './direct-page/yumeyu-main-page/yumeyu-routing.module';
+import { MainRoutingModule } from './direct-page/main-page/main-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { YumeyuRoutingModule } from './direct-page/yumeyu-main-page/yumeyu-routi
     BrowserModule,
     YumeyuModule,
     YumeyuRoutingModule,
+    MainRoutingModule,
   ],
   bootstrap: [AppComponent],
 })
