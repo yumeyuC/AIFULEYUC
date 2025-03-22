@@ -1,3 +1,9 @@
+name: Run TypeScript Script
+
+on:
+  push:
+    branches:
+      - master
 jobs:
   run-typescript:
     runs-on: ubuntu-latest
